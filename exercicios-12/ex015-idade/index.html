@@ -3,15 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modelo</title>
+    <title>Analisador de Idade</title>
     <link rel="stylesheet" href="estilo/style.css" />
   </head>
   <body>
-    <header>Titulo</header>
+    <header>Analisador de Idade</header>
 
     <section>
-      <div>Teste</div>
-      <div></div>
+      <div>
+        <p>
+          Ano de Nascimento: <input type="number" name="inano" id="txano" min="0"/>
+        </p>
+
+        <p>
+          sexo: 
+          <label>
+            <input type="radio" name="genero" value="masculino" required>
+            Masculino
+            <input type="radio" name="genero" value="feminino">
+            Feminino
+        </label>
+        </p>
+        <p>
+          <input type="button" value="Verificar" onclick="verificar()">
+        </p>
+      </div>
+
+      <div id="saida">Preencha os dados acima!</div>
     </section>
 
     <footer>
