@@ -1,0 +1,29 @@
+body {
+  background-color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15pt;
+  text-align: center;
+  color: white;
+}
+
+header {
+  
+}
+
+section {
+  background: #e20808;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  margin: auto;
+  box-shadow:2px 2px 10px #af9f9f76;
+}
+
+footer {
+  background-color: #e20808;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+  color: rgb(5, 5, 5);
+}

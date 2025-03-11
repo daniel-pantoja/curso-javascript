@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisador de Idade</title>
+    <link rel="stylesheet" href="estilo/style.css" />
+  </head>
+  <body>
+    <header>Analisador de Idade</header>
+    <section>
+      <div>
+        <p>
+          Coloque seu Ano de Nascimento:
+          <input type="number" name="inano" id="txano" min="0" max="2025" />
+        </p>
+
+        <p>
+          Sexo:
+          <label>
+            <input type="radio" name="genero" value="masculino" required />
+            Masculino
+          </label>
+          <label>
+            <input type="radio" name="genero" value="feminino" /> Feminino
+          </label>
+        </p>
+
+        <p><input type="button" value="Verificar" onclick="verificar()" /></p>
+      </div>
+      <div id="saida">Preencha os dados acima!</div>
+    </section>
+
+    <footer>
+      <p>
+        ©Site criado por
+        <a href="https://www.linkedin.com/in/danielpantoja6/"
+          ><strong>Daniel</strong></a
+        >
+      </p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
