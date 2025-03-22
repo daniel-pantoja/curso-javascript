@@ -23,7 +23,21 @@
 
   <script>
    var nome = window.prompt ('Digite uma senha...') 
+
    window.alert('A senha '+nome+' tá muito facíl') 
+
+   var melhoria = window.confirm('Você gostaria de melhorar a sua senha?')
+
+if (melhoria) {
+    var novaSenha = window.prompt('Digite uma nova senha mais forte:')
+    window.alert('A nova senha "' + novaSenha + '" é muito mais forte!')
+} else {
+    window.alert('Ok, você pode continuar usando a senha fácil.')
+}
+
+window.prompt('Você se sente seguro usando esta senha? (sim/não)')
+
+window.alert('Lembre-se de trocar sua senha regularmente para se manter seguro!')
   </script>
 </body>
 </html>
