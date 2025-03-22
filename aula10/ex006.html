@@ -17,28 +17,41 @@
     </style>
   </head>
   <body>
-    <div id="area">
-      Vamos Conversar! Clique
-    </div>
+    <div id="area">Vamos Conversar! Clique</div>
 
     <script>
       var area = window.document.getElementById("area");
 
-      area.addEventListener('click', clicar)
-      area.addEventListener('mouseenter', entrar)
-      area.addEventListener('mouseout', sair)
+      area.addEventListener("click", clicar);
+      area.addEventListener("mouseenter", entrar);
+      area.addEventListener("mouseout", sair);
+      area.addEventListener("dblclick", dobrar);
+      area.addEventListener("contextmenu", menuContexto);
 
       function clicar() {
-        area.innerText = "Clicou";
-        area.style.backgroundColor = 'blue'
+        area.innerText = "Clicou. Agora clique duas vezes";
+        area.style.backgroundColor = "blue";
       }
+
       function entrar() {
         area.innerText = "Entrou, Clica ai";
-        area.style.backgroundColor = 'red'
+        area.style.backgroundColor = "red";
       }
+
+      function dobrar() {
+        area.innerText = "Clicou duas vezes!";
+        area.style.backgroundColor = "purple";
+      }
+
+      function menuContexto(event) {
+        event.preventDefault(); // Impede o menu de contexto padrão
+        area.innerText = "Clique direito!";
+        area.style.backgroundColor = "orange";
+      }
+
       function sair() {
-        area.innerText = "Saiu"
-        area.style.backgroundColor = 'green'
+        area.innerText = "Saiu";
+        area.style.backgroundColor = "green";
       }
     </script>
   </body>
