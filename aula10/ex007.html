@@ -22,22 +22,49 @@
   <input type="number" name="intx1" id="tx1"> +
   <input type="number" name="intex2" id="tex2">
   <input type="button" value="SOMAR" onclick="somar()">
+  <input type="button" value="RESETAR" onclick="resetar()">
 
   <div id="re">Resultado...</div>
+  <h2>Histórico de Somas</h2>
+  <ul id="historico"></ul>
 
   <script>
     function somar() {
       var t1 = window.document.getElementById('tx1');
       var t2 = window.document.getElementById('tex2');
       var resu = window.document.getElementById('re');
+      var historico = window.document.getElementById('historico');
 
       var teex1 = Number(t1.value);
       var teex2 = Number(t2.value);
+      
+       // Validação de entrada
+       if (isNaN(teex1) || isNaN(teex2)) {
+        resu.innerHTML = `Por favor, insira números válidos.`;
+        return; // Sai da função se a entrada não for válida
+      }
 
       var s = teex1 + teex2;
 
       resu.innerHTML = `A soma dos valores entre ${teex1} e ${teex2} é igual a ${s}`;
+
+      // Adicionando ao histórico de somas
+      var li = document.createElement('li');
+      li.innerText = `${teex1} + ${teex2} = ${s}`;
+      historico.appendChild(li);
     } 
+
+    function resetar() {
+      var t1 = window.document.getElementById('tx1');
+      var t2 = window.document.getElementById('tex2');
+      var resu = window.document.getElementById('re');
+      var historico = window.document.getElementById('historico');
+
+      t1.value = '';
+      t2.value = '';
+      resu.innerHTML = 'Resultado...';
+      historico.innerHTML = ''; // Limpa o histórico
+    }
   </script>
 </body>
 </html>
