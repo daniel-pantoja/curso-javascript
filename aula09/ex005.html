@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Primeiros passos com DOM</title>
-  <style>
-    body {
-      background-color: thistle;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 19px;
-      color: #ffff;
-    }
-  </style>
-</head>
-<body>
-  <h1>Estudos com DOM</h1>
-  <p>Resultado</p>
-  <p>Usando <strong>DOM</strong> em javaScript</p>
-  <div class="msg">Clique aqui!</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeiros passos com DOM</title>
+    <style>
+      body {
+        background-color: thistle;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 19px;
+        color: #ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Estudos com DOM</h1>
+    <p>Resultado</p>
+    <p>Usando <strong>DOM</strong> em javaScript</p>
+    <div class="msg">Clique aqui!</div>
 
-  <script>
-    var corpo = window.document.body
-    var p1 = window.document.getElementsByClassName('p') [1]
-    /*
-    var d = window.document.getElementById('msg')
-    d.style.background = 'green'
-     d.innerText = 'Estou aguardando...'
-    */
-   var d = window.document.querySelector('div.msg')
-   d.style.background = 'red'
-  </script>
-</body>
+    <script>
+      var corpo = window.document.body;
+      var d = window.document.querySelector("div.msg");
+      d.style.background = "red";
+
+      d.addEventListener("click", function () {
+        d.innerText = "Você clicou na mensagem!";
+        d.style.backgroundColor = "green";
+      });
+
+      function adicionarParagrafo(texto) {
+        var novoParagrafo = document.createElement("p");
+        novoParagrafo.innerText = texto;
+        novoParagrafo.style.color = "blue";
+        corpo.appendChild(novoParagrafo);
+      }
+
+      // Adicionando parágrafos dinâmicos ao clicar na div
+      d.addEventListener("dblclick", function () {
+        adicionarParagrafo("Parágrafo adicionado com um clique duplo!");
+      });
+
+      // Resetando o conteúdo da div
+      function resetarMensagem() {
+        d.innerText = "Clique aqui!";
+        d.style.background = "red";
+      }
+
+      // Adicionando um botão para resetar a mensagem
+      var resetButton = document.createElement("button");
+      resetButton.innerText = "Resetar Mensagem";
+      document.body.appendChild(resetButton);
+
+      resetButton.addEventListener("click", resetarMensagem);
+
+      // Alterando a cor de fundo
+      d.addEventListener("contextmenu", function (event) {
+        event.preventDefault(); // Evita o menu de contexto
+        corpo.style.backgroundColor = "lightblue";
+        alert("Cor de fundo mudou para azul!");
+      });
+    </script>
+  </body>
 </html>
