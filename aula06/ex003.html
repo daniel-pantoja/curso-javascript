@@ -1,37 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digite uma senha</title>
-  <style>
-    body {
-      background-color: rgb(17, 8, 100);
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digite uma senha</title>
+    <style>
+      body {
+        background-color: rgb(17, 8, 100);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-    h1 {
-      color: rgb(17, 0, 255);
-    }
+      h1 {
+        color: rgb(17, 0, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Olá, tudo bem?</h1>
+    <p>Esse site foi criado pelo Daniel</p>
 
-  </style>
-</head>
-<body>
-  <h1>Olá, tudo bem?</h1>
-  <p>Esse site foi criado pelo Daniel</p>
+    <script>
+      var n1 = parseFloat(window.prompt("Digite um número")); //parseFloat para conventer para números reais/inteiro
+      //Number inteiros ou rais
 
+      var n2 = Number(window.prompt("Digite mais números"));
 
-  <script>
-   var n1 = parseFloat (window.prompt ('Digite um número')) //parseFloat para conventer para números reais/inteiro
-   //Number inteiros ou rais
+      var s = n1 + n2;
 
-   var n2 = Number (window.prompt ('Digite mais números'))
+      window.alert(`A soma de ${n1} mais ${n2} é no valor de ${s}`); // O + se diz Contatenação.
+      // + Serve para somar e para Contatenação/juntar.
 
-   var s = n1 + n2
+      var subtracao = n1 - n2;
+      window.alert(
+        `A subtração de ${n1} menos ${n2} é no valor de ${subtracao}.`
+      );
 
-   window.alert (`A soma de ${n1} mais ${n2} é no valor de ${s}`) // O + se diz Contatenação.
-   // + Serve para somar e para Contatenação/juntar.
-  </script>
-</body>
+      // Cálculo da multiplicação
+      var multiplicacao = n1 * n2;
+      window.alert(
+        `A multiplicação de ${n1} vezes ${n2} é no valor de ${multiplicacao}.`
+      );
+
+      // Cálculo da divisão
+      if (n2 !== 0) {
+        var divisao = n1 / n2;
+        window.alert(`A divisão de ${n1} por ${n2} é no valor de ${divisao}.`);
+      } else {
+        window.alert("Não é possível dividir por zero!");
+      }
+
+      // Pergunta sobre outro cálculo
+      var outroCalculo = window.confirm(
+        "Você gostaria de fazer mais um cálculo?"
+      );
+
+      if (outroCalculo) {
+        var n3 = parseFloat(window.prompt("Digite um terceiro número"));
+        var somaTotal = s + n3;
+        window.alert(`A soma total é agora ${somaTotal}.`);
+      } else {
+        window.alert("Obrigado por usar o calculador!");
+      }
+    </script>
+  </body>
 </html>
