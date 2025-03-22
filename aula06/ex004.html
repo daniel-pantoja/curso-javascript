@@ -17,8 +17,31 @@
     var nome = window.prompt('Qual seu nome?')
 
     document.write (`Olá, ${nome}! Seu nome tem ${nome.length} letras.`)
-
     document.write (`<br> Seu nome em maiúsculo ${nome.toLocaleUpperCase()}`)
+    document.write(`Seu nome em minúsculo: ${nome.toLocaleLowerCase()}<br>`);
+    
+    var ultimaLetra = nome.charAt(nome.length - 1);
+    document.write(`A última letra do seu nome é: ${ultimaLetra}<br>`);
+    
+    // Perguntando se o usuário quer saber o nome invertido
+    var inverter = window.confirm('Você gostaria de ver seu nome invertido?');
+    
+    if (inverter) {
+        var nomeInvertido = nome.split('').reverse().join('');
+        document.write(`Seu nome invertido é: ${nomeInvertido}<br>`);
+    } else {
+        document.write('Ok, você escolheu não inverter seu nome.<br>');
+    }
+
+    var idade = window.prompt('Quantos anos você tem?');
+
+    document.write(`Você tem ${idade} anos.<br>`);
+
+    if (idade < 18) {
+        document.write('Você é considerado um jovem!');
+    } else {
+        document.write('Você já é um adulto!');
+    }
   </script>
 </body>
 </html>
